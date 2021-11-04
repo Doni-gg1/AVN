@@ -1,0 +1,27 @@
+<h3>Форма изменения записей в базе</h3>
+{{#each arr}}
+<form action="/actionEditUser" method="get">
+     <p><strong>ID: {{id}}</strong></p>
+    Имя:<br />
+    <input type="text" name="first_name" value="{{first_name}}" /><br /><br />
+    Фамилия:<br />
+    <input type="text" name="last_name" value="{{last_name}}" /><br /><br />
+    Почта:<br />
+    <input type="text" name="email" value="{{email}}" /><br /><br />
+    Пол:<br />
+    <select name="gender">
+        <option value="do not choose">Выберите пол</option>
+        {{#if gender}}
+        <option selected value="true">Мужской</option>
+        <option value="false">Женский</option>
+        {{else}}
+        <option value="true">Мужской</option>
+        <option selected value="false">Женский</option>
+        {{/if}}
+        
+    </select>
+
+    <input type="submit" />
+
+</form>
+{{/each}}

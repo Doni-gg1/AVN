@@ -1,0 +1,31 @@
+
+<h1>ПРИВЕТ Бегайым!!!!</h1>
+Меня зовут {{paramA}} <br>
+Моя фамилия {{fam}}
+
+
+<a href="/home">Home</a> <br>
+<a href="/formAddUser">Добавить запись</a> <br>
+{{#if data}}
+<table border=1>
+    <tr>
+        <th>#</th>
+        <th>Имя</th>
+        <th>Фамилия</th>
+        <th>Почта</th>
+        <th>Пол</th>
+        <th>Действие</th>
+    </tr>
+    {{#each data}}
+    <tr>
+        <td>{{id}}</td>
+        <td>{{first_name}}</td>
+        <td>{{last_name}}</td>
+        <td>{{email}}</td>
+        <td>{{#if gender}} Мужской {{else}} Женский {{/if}}</td>
+        <td><a href="/actionDeleteUser?id={{id}}">Delete</a> <a href="/formEditUser?id={{id}}">Edit</a></td>
+    </tr>
+    {{/each}}
+    
+</table>
+{{/if}}

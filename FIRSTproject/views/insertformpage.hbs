@@ -1,0 +1,19 @@
+<h3>Форма добавление новой записи(новый человек) в базу</h3>
+
+<form action="/actionNewUser" method="get">
+Имя:<br />
+<input type="text" name="firstname"/><br /><br />
+Фамилия:<br />
+<input type="text" name="lastname"/><br /><br />
+Почта:<br />
+<input type="text" name="email"/><br /><br />
+Пол:<br />
+<select name="gender" >
+    <option value="do not choose">Выберите пол</option>
+    <option {{#if gender}}  {{/if}}value="male">Мужской</option>
+    <option value="female">Женский</option>
+</select>   
+
+<input type="submit" /> 
+
+</form>
