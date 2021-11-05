@@ -50,11 +50,11 @@ router.get('/actionNewUser', async function (req, res) {
 
 router.get('/actionEditUser', async function (req, res) {
   const { first_name, last_name, email, gender, id } = req.query
-  console.log(req.query)
   const edit = await DB.query(`
   UPDATE empolyee set first_name = $1, last_name=$2, email=$3, gender=$4 WHERE id=$5;`,
-    [first_name, last_name, email, gender, id])
-  res.redirect('/');
+  [first_name, last_name, email, gender, id])
+  console.log(edit)
+
 })
 
 module.exports = router;
