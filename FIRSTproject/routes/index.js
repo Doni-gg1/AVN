@@ -54,6 +54,7 @@ router.get('/actionEditUser', async function (req, res) {
   UPDATE empolyee set first_name = $1, last_name=$2, email=$3, gender=$4 WHERE id=$5;`,
   [first_name, last_name, email, gender, id])
   console.log(edit)
+  res.redirect('http://localhost:3000/');
 
 })
 
